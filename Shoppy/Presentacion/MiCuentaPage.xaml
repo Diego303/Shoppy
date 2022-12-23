@@ -1,0 +1,156 @@
+﻿<Page x:Name="miCuentaPage"
+    x:Class="Shoppy.Presentacion.MiCuentaPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Shoppy.Presentacion"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:muxc="using:Microsoft.UI.Xaml.Controls"
+      mc:Ignorable="d"
+    Background="White">
+
+    <Page.Resources>
+        <Style TargetType="Button" x:Key="ButtonRevealStyleMiCuenta">
+            <Setter Property="Background" Value="{ThemeResource ButtonRevealBackground}" />
+            <Setter Property="Foreground" Value="{ThemeResource ButtonForeground}" />
+            <Setter Property="BorderBrush" Value="{ThemeResource ButtonRevealBorderBrush}" />
+            <Setter Property="BorderThickness" Value="{ThemeResource ButtonRevealBorderThemeThickness}" />
+            <Setter Property="Padding" Value="{ThemeResource ButtonPadding}" />
+            <Setter Property="HorizontalAlignment" Value="Left" />
+            <Setter Property="VerticalAlignment" Value="Center" />
+            <Setter Property="FontFamily" Value="{ThemeResource ContentControlThemeFontFamily}" />
+            <Setter Property="FontWeight" Value="Normal" />
+            <Setter Property="FontSize" Value="{ThemeResource ControlContentThemeFontSize}" />
+            <Setter Property="UseSystemFocusVisuals" Value="{StaticResource UseSystemFocusVisuals}" />
+            <Setter Property="FocusVisualMargin" Value="-3" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Grid x:Name="RootGrid" Background="{TemplateBinding Background}" CornerRadius="{TemplateBinding CornerRadius}">
+
+                            <VisualStateManager.VisualStateGroups>
+                                <VisualStateGroup x:Name="CommonStates">
+                                    <VisualState x:Name="Normal">
+
+                                        <VisualState.Setters>
+                                            <Setter Target="RootGrid.Background" Value="#FFF17416" />
+                                            <Setter Target="ContentPresenter.BorderBrush" Value="#FFF17416" />
+                                            <Setter Target="ContentPresenter.Foreground" Value="#FFFFFFFF" />
+
+                                        </VisualState.Setters>
+                                        <Storyboard>
+                                            <PointerUpThemeAnimation Storyboard.TargetName="RootGrid" />
+                                            
+                                        </Storyboard>
+                                    </VisualState>
+
+                                    <VisualState x:Name="PointerOver">
+                                        <VisualState.Setters>
+                                            <Setter Target="RootGrid.(RevealBrush.State)" Value="PointerOver" />
+                                            <Setter Target="RootGrid.Background" Value="#FFFFA775" />
+                                            <Setter Target="ContentPresenter.BorderBrush" Value="#FFF17416" />
+                                            <Setter Target="ContentPresenter.Foreground" Value="#FFFFFFFF" />
+                                        </VisualState.Setters>
+
+                                        <Storyboard>
+                                            <PointerUpThemeAnimation Storyboard.TargetName="RootGrid" />
+                                        </Storyboard>
+                                    </VisualState>
+
+                                    <VisualState x:Name="Pressed">
+                                        <VisualState.Setters>
+                                            <Setter Target="RootGrid.(RevealBrush.State)" Value="Pressed" />
+                                            <Setter Target="RootGrid.Background" Value="#FFFFA775" />
+                                            <Setter Target="ContentPresenter.BorderBrush" Value="#FFF17416" />
+                                            <Setter Target="ContentPresenter.Foreground" Value="#FFFFFFFF" />
+                                        </VisualState.Setters>
+
+                                        <Storyboard>
+                                            <PointerDownThemeAnimation Storyboard.TargetName="RootGrid" />
+                                        </Storyboard>
+                                    </VisualState>
+
+                                    <VisualState x:Name="Disabled">
+                                        <VisualState.Setters>
+                                            <Setter Target="RootGrid.Background" Value="{ThemeResource ButtonRevealBackgroundDisabled}" />
+                                            <Setter Target="ContentPresenter.BorderBrush" Value="{ThemeResource ButtonRevealBorderBrushDisabled}" />
+                                            <Setter Target="ContentPresenter.Foreground" Value="{ThemeResource ButtonForegroundDisabled}" />
+                                        </VisualState.Setters>
+                                    </VisualState>
+
+                                </VisualStateGroup>
+
+                            </VisualStateManager.VisualStateGroups>
+                            <ContentPresenter x:Name="ContentPresenter" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="{TemplateBinding CornerRadius}" Content="{TemplateBinding Content}" ContentTransitions="{TemplateBinding ContentTransitions}" ContentTemplate="{TemplateBinding ContentTemplate}" Padding="{TemplateBinding Padding}" HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}" VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}" AutomationProperties.AccessibilityView="Raw" />
+
+                        </Grid>
+
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Page.Resources>
+
+    <Grid x:Name="gridCuenta">
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="30"></ColumnDefinition>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="30"></ColumnDefinition>
+
+        </Grid.ColumnDefinitions>
+        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+
+        </Grid.RowDefinitions>
+
+        <TextBlock x:Name="tbEspacio" Text="" Grid.Row="0" Grid.Column="1" FocusVisualPrimaryBrush="White" Foreground="Black"/>
+        <TextBlock x:Name="tbTituloNombre" Text="Nombre"  Grid.Row="1" Grid.Column="1" FocusVisualPrimaryBrush="White" Foreground="Black" FontWeight="Bold"/>
+        <TextBox x:Name="tbNombre" HorizontalAlignment="Stretch" Grid.Row="2" Grid.Column="1" Text="Javier" TextWrapping="Wrap" VerticalAlignment="Center" Margin="3,3,3,3"/>
+
+        <TextBlock x:Name="tbEspacio1" Text="" Grid.Row="3" Grid.Column="1" FocusVisualPrimaryBrush="White" Foreground="Black"/>
+        <TextBlock x:Name="tbTituloApellidos" Text="Apellidos"  Grid.Row="4" Grid.Column="1" FocusVisualPrimaryBrush="White" Foreground="Black" FontWeight="Bold"/>
+        <TextBox x:Name="tbApellidos" HorizontalAlignment="Stretch" Grid.Row="5" Grid.Column="1" Text="Perez Fernandez" TextWrapping="Wrap" VerticalAlignment="Center" Margin="3,3,3,3"/>
+
+        <TextBlock x:Name="tbEspacio2" Text="" Grid.Row="6" Grid.Column="1" FocusVisualPrimaryBrush="White" Foreground="Black"/>
+        <TextBlock x:Name="tbTituloDireccion" Text="Direccion"  Grid.Row="7" Grid.Column="1" FocusVisualPrimaryBrush="White" Foreground="Black" FontWeight="Bold"/>
+        <TextBox x:Name="tbDireccion" HorizontalAlignment="Stretch" Grid.Row="8" Grid.Column="1" Text="Calle Falsa 123" TextWrapping="Wrap" VerticalAlignment="Center" Margin="3,3,3,3"/>
+
+        <TextBlock x:Name="tbEspacio3" Text="" Grid.Row="9" Grid.Column="1" FocusVisualPrimaryBrush="White" Foreground="Black"/>
+        <TextBlock x:Name="tbTituloTelefono" Text="Telefono"  Grid.Row="10" Grid.Column="1" FocusVisualPrimaryBrush="White" Foreground="Black" FontWeight="Bold"/>
+        <TextBox x:Name="tbTelefono" HorizontalAlignment="Stretch" Grid.Row="11" Grid.Column="1" Text="928 67 54 34" TextWrapping="Wrap" VerticalAlignment="Center" Margin="3,3,3,3"/>
+
+        <TextBlock x:Name="tbEspacio4" Text="" Grid.Row="12" Grid.Column="1" FocusVisualPrimaryBrush="White" Foreground="Black"/>
+        <TextBlock x:Name="tbTituloEmail" Text="Email"  Grid.Row="13" Grid.Column="1" FocusVisualPrimaryBrush="White" Foreground="Black" FontWeight="Bold"/>
+        <TextBox x:Name="tbEmail" HorizontalAlignment="Stretch" Grid.Row="14" Grid.Column="1" Text="javier.perez1@gmail.es" TextWrapping="Wrap" VerticalAlignment="Center" Margin="3,3,3,3"/>
+
+        <TextBlock x:Name="tbEspacio5" Text="" Grid.Row="15" Grid.Column="1" FocusVisualPrimaryBrush="White" Foreground="Black"/>
+        <Button x:Name="btnGuardarCambios" Content="Guardar Cambios" Grid.Row="16" Grid.Column="1" VerticalAlignment="Top" Background="#33F77171" Margin="9,9,9,9" Style="{StaticResource ButtonRevealStyleMiCuenta}" FontWeight="Bold" Click="btnGuardarCambios_Click"/>
+        <Button x:Name="btnCerrarAplicacion" Content="Cerrar Aplicacion" Grid.Row="17" Grid.Column="1" VerticalAlignment="Top" Background="#33FA5A5A" Margin="9,9,9,9" Style="{StaticResource ButtonRevealStyleMiCuenta}" FontWeight="Bold" Click="btnCerrarAplicacion_Click"/>
+
+        <muxc:InfoBar x:Name="ibCorrecto"
+            IsOpen="False"
+            Severity="Success"
+            Title="Guardado"
+            Message="Los cambios en su cuenta se han guardado correctamente" Grid.ColumnSpan="3" Margin="10,10,10,10" />
+
+    </Grid>
+    
+</Page>

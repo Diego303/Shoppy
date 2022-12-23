@@ -1,0 +1,49 @@
+﻿<Page x:Name="PaginaOutlet"
+    x:Class="Shoppy.Presentacion.OutletPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Shoppy.Presentacion"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:data="using:Shoppy.Modelo" xmlns:local1="using:Shoppy"
+      mc:Ignorable="d"
+    Background="White">
+
+    <ScrollViewer x:Name="svBarraMainPage"  ZoomMode="Disabled"
+                    IsTabStop="True" IsVerticalScrollChainingEnabled="True"
+                    HorizontalScrollMode="Enabled" HorizontalScrollBarVisibility="Disabled"
+                    VerticalScrollMode="Enabled" VerticalScrollBarVisibility="Visible" VerticalAlignment="Stretch">
+        <Grid x:Name="gridOutlet">
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="30"></ColumnDefinition>
+                <ColumnDefinition/>
+
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+
+            </Grid.RowDefinitions>
+
+            <TextBlock x:Name="tbEspacio" Text="" Margin="4" Grid.Row="0" Grid.Column="1" FocusVisualPrimaryBrush="White" Foreground="Black"/>
+
+            <StackPanel Grid.Column="1" Grid.Row="1" Orientation="Vertical" HorizontalAlignment="Left">
+                <TextBlock x:Name="tbTitular" Text="Aqui encontraras Prendas Más Baja de Precio!!" TextWrapping="Wrap" FocusVisualPrimaryBrush="White" Foreground="Black" FontWeight="Bold" SelectionHighlightColor="Black" HorizontalAlignment="Left" VerticalAlignment="Stretch"/>
+            </StackPanel>
+            
+            <TextBlock x:Name="tbEspacio2" Text="" Margin="4" Grid.Row="2" Grid.Column="1" FocusVisualPrimaryBrush="White" Foreground="Black"/>
+
+            <GridView x:Name="gridDatos" Grid.Row="3" Grid.Column="1" IsItemClickEnabled="True" HorizontalAlignment="Stretch" Grid.ColumnSpan="4" VerticalAlignment="Stretch" Grid.RowSpan="1">
+                <GridView.ItemTemplate>
+                    <DataTemplate>
+                        <local1:UC_Producto Datos="{Binding }" />
+                    </DataTemplate>
+                </GridView.ItemTemplate>
+            </GridView>
+
+
+        </Grid>
+    </ScrollViewer>
+</Page>

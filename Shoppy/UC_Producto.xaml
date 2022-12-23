@@ -1,0 +1,30 @@
+﻿<UserControl x:Name="ucProducto"
+    x:Class="Shoppy.UC_Producto"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Shoppy"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d" Height="290" Width="200">
+    <UserControl.Resources>
+        <Storyboard x:Name="colorearCorazon">
+            <ColorAnimation Duration="00:00:00.2000000" Storyboard.TargetName="corazon" Storyboard.TargetProperty="(Shape.Fill).(SolidColorBrush.Color)" To="Red"/>
+        </Storyboard>
+        <Storyboard x:Name="descolorearCorazon">
+            <ColorAnimation Duration="00:00:00.2000000" Storyboard.TargetName="corazon" Storyboard.TargetProperty="(Shape.Stroke).(SolidColorBrush.Color)" To="Black"/>
+            <ColorAnimation Duration="00:00:00.2000000" Storyboard.TargetName="corazon" Storyboard.TargetProperty="(Shape.Fill).(SolidColorBrush.Color)" To="#FFFFC3C3"/>
+        </Storyboard>
+    </UserControl.Resources>
+
+    <Grid x:Name="gGeneral" VerticalAlignment="Center" Height="288" Background="White" BorderBrush="#FF9F9F9F" BorderThickness="2,2,2,2">
+        <Image x:Name="imProducto" VerticalAlignment="Top" Source="/Assets/Imagenes/Nergigante.jpg" Stretch="Fill" Height="220" PointerPressed="imProducto_PointerPressed"/>
+        <TextBlock x:Name="tbNombrePrenda" HorizontalAlignment="Left" Margin="10,235,0,0" Text="Nombre Prenda" TextWrapping="Wrap" VerticalAlignment="Top" FontWeight="Bold" Foreground="Black" PointerPressed="tbNombrePrenda_PointerPressed"/>
+        <TextBlock x:Name="tbPrecioPrenda" HorizontalAlignment="Left" Margin="10,256,0,0" Text="00.00" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="11" FocusVisualPrimaryBrush="#FFFFF4F4" Foreground="Black" PointerReleased="tbPrecioPrenda_PointerReleased"/>
+        <Path x:Name="corazon" Margin="160,258,0,0" Stroke="Red" UseLayoutRounding="False" d:LayoutRounding="Auto" Fill="Red" Data="M9.5,0.5 C13.150257,0.50000003 16.292959,3.6389256 17.704969,8.1500244 L17.725992,8.2194357 L17.831747,8.2078877 C22.669489,7.7246046 26.903997,9.4618864 28.302069,12.917723 C30.166166,17.525505 26.281816,23.443621 19.626131,26.136206 C15.154344,27.945286 10.569267,27.838032 7.4763985,26.175354 L7.451304,26.161413 L7.2507596,26.090725 C3.368613,24.647968 0.5,19.557873 0.5,13.5 C0.5,6.3202982 4.5294371,0.50000003 9.5,0.5 z" HorizontalAlignment="Left" Height="19" RenderTransformOrigin="0.32457552056045,0.482870350675995" Stretch="Fill" VerticalAlignment="Top" Width="19" PointerPressed="corazon_PointerPressed" ToolTipService.ToolTip="Añadir a Favoritos">
+            <Path.RenderTransform>
+                <CompositeTransform Rotation="-32.455"/>
+            </Path.RenderTransform>
+        </Path>
+
+    </Grid>
+</UserControl>

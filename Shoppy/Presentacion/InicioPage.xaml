@@ -1,0 +1,52 @@
+﻿<Page
+    x:Class="Shoppy.Presentacion.InicioPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Shoppy.Presentacion"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:local1="using:Shoppy"
+    mc:Ignorable="d"
+    Background="White">
+
+    <ScrollViewer x:Name="svBarraMainPage"  ZoomMode="Disabled"
+                    IsTabStop="True" IsVerticalScrollChainingEnabled="True"
+                    HorizontalScrollMode="Enabled" HorizontalScrollBarVisibility="Disabled"
+                    VerticalScrollMode="Enabled" VerticalScrollBarVisibility="Visible" VerticalAlignment="Stretch">
+
+        <Grid x:Name="gridMainPage" Margin="10,10,0,0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="290"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+            </Grid.RowDefinitions>
+
+            <TextBlock x:Name="tbTitularInicio" Text="Lo más vendido esta semana..." Margin="4,4,4,4" Grid.Row="0" Grid.Column="1" FocusVisualPrimaryBrush="White" Foreground="Black" FontWeight="Bold"></TextBlock>
+
+            <FlipView x:Name="flipVMasVendido" Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Left" Width="223" Height="291">
+
+                <FlipView.ItemTemplate>
+                    <DataTemplate>
+                        <local1:UC_Producto Datos="{Binding }" />
+                    </DataTemplate>
+                </FlipView.ItemTemplate>
+                <TextBlock Text="TextBlock" TextWrapping="Wrap"/>
+
+            </FlipView>
+
+            <TextBlock x:Name="tbEspacio" Text="" Margin="4" Grid.Row="2" Grid.Column="1" FocusVisualPrimaryBrush="White" Foreground="Black"/>
+            <TextBlock x:Name="tbTitularInicio3" Text="Nueva Colección" Margin="4" Grid.Row="3" Grid.Column="1" FocusVisualPrimaryBrush="White" Foreground="Black" FontWeight="Bold" SelectionHighlightColor="Black"></TextBlock>
+
+            <GridView x:Name="gridDatosNuevaColeccion" Grid.Row="4" Grid.Column="1" IsItemClickEnabled="True">
+                <GridView.ItemTemplate>
+                    <DataTemplate>
+                        <local1:UC_Producto Datos="{Binding }" />
+                    </DataTemplate>
+                </GridView.ItemTemplate>
+            </GridView>
+
+        </Grid>
+
+    </ScrollViewer>
+</Page>

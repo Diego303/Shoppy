@@ -1,0 +1,21 @@
+﻿<UserControl x:Name="ucProductoCarrito"
+    x:Class="Shoppy.UC_ProductoCarrito"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Shoppy"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d" Height="240" Width="383">
+
+    <Grid x:Name="gridProductoCarrito" Background="White" BorderBrush="#FF9F9F9F" BorderThickness="2,2,2,2">
+        <Image x:Name="imProducto" HorizontalAlignment="Left" Height="240" VerticalAlignment="Center" Width="152" Source="/Assets/Imagenes/Nergigante.jpg" Stretch="Fill"/>
+        <TextBlock x:Name="tbNombreProducto" HorizontalAlignment="Left" Margin="174,21,0,0" Text="Ropa Llamada Tal" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="Black" FontWeight="Bold"/>
+        <TextBlock x:Name="tbPrecio" HorizontalAlignment="Left" Margin="320,199,0,0" Text="80.00" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="Black" FontWeight="Bold"/>
+        <SymbolIcon x:Name="iconBorrar" Margin="0,193,0,20" Symbol="Delete" HorizontalAlignment="Center" FocusVisualPrimaryBrush="White" Foreground="Black" Width="30" PointerReleased="iconBorrar_PointerReleased"/>
+
+
+        <SymbolIcon x:Name="iconRemove" Margin="254,89,0,144" Symbol="Remove" HorizontalAlignment="Left" FocusVisualPrimaryBrush="White" Foreground="Black" Width="37" PointerReleased="iconRemove_PointerReleased"/>
+        <SymbolIcon x:Name="iconAdd" Margin="315,85,0,138" Symbol="Add" HorizontalAlignment="Left" FocusVisualPrimaryBrush="White" Foreground="Black" Width="29" PointerReleased="iconAdd_PointerReleased"/>
+        <TextBlock x:Name="tbCantidad" HorizontalAlignment="Left" Margin="299,81,0,0" Text="1" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="Black" FontWeight="Bold"/>
+    </Grid>
+</UserControl>

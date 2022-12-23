@@ -1,0 +1,36 @@
+﻿<ContentDialog
+    x:Class="Shoppy.Presentacion.RegistroCD"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Shoppy.Presentacion"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:muxc="using:Microsoft.UI.Xaml.Controls"
+    mc:Ignorable="d"
+    Title="Iniciar sesión"
+    PrimaryButtonText="Registro"
+    CloseButtonText="Cancelar"
+    PrimaryButtonClick="ContentDialog_PrimaryButtonClick"
+    SecondaryButtonClick="ContentDialog_SecondaryButtonClick"
+    
+    DefaultButton="Primary">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <TextBox x:Name="txtNombre" Grid.Row="0" Header="Nombre" PlaceholderText="Juan" />
+        <TextBox x:Name="txtApellidos" Grid.Row="1" Header="Apellidos" PlaceholderText="Perez Martin" />
+        <TextBox x:Name="txtDireccion" Grid.Row="2" Header="Dirección" PlaceholderText="Calle Falsa 123" />
+        <TextBox x:Name="txtTelefono" Grid.Row="3" Header="Teléfono" PlaceholderText="669 548 231" />
+        <TextBox x:Name="txtCorreo" Grid.Row="4" Header="Correo" PlaceholderText="nombre@ejemplo.com" />
+        <PasswordBox x:Name="txtContrasena" Grid.Row="5" Header="Contraseña" PlaceholderText="Contraseña" />
+        <muxc:InfoBar x:Name="ibCamposObligatorios" IsOpen="False" Severity="Error" Title="Todos los campos son obligatorios"/>
+    </Grid>
+</ContentDialog>
